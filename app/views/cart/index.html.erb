@@ -1,0 +1,41 @@
+<p><% breadcrumb :cart_items %></p>
+<h1>カート一覧</h1>
+
+<div class="cart-items">
+<% @items.each do|item| %>
+<div class="items">
+<pre>
+<h3><%= item.name %></h3>
+<%= image_tag("#{item.image_name}", :size => "60x200") %>
+<h3><%= item.price %>円（税込) </h3>
+
+<%= form_with url: cart_create_path do |form| %>
+<%= form.label :quantity, "数量" %>
+<%= form.select :quantity, [1,2,3,4,5,6,7,8,9,10] %>
+<% end %>
+
+<%= link_to("削除する", "/top") %>
+
+<% end %>
+
+
+
+</pre>
+</div>
+
+  <pre>
+  小計：3070円(税込)
+  送料: 726円(税込)
+  ________________
+  <h2>総合計: 3796円(税込)</h2>
+</pre>
+</div>
+
+
+<%= form_with url: order_details_create_path do|form| %>
+<% @items.each do |item| %>
+ <%= form.hidden_field :item_ids, :multiple => true, :value => item.id %>
+<% end %>
+<br>
+<%= form.submit "購入手続きへ" %>
+<% end %>

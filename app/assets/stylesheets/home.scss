@@ -1,0 +1,122 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+li{
+    list-style: none;
+}
+
+header{
+    width: 100%;
+    height: 90px;
+    position:　fixed;
+    border-bottom: 1px solid black;
+}
+
+.header-left{
+    float: left;
+    display: inline-block;
+}
+
+.logo-sub{
+    font-size: 12px;
+}
+
+.logo{
+    height: 5%;
+    width: 5%;
+}
+
+.header-right{
+    float: right;
+    display: flex;
+    padding: 15px;
+    padding-right: 30px;
+}
+
+.header-inquiry{
+    padding-right: 20px;
+    padding-top: 15px;
+    text-decoration: none;
+    color: black;
+}
+
+.user-img{
+    padding-right: 20px;
+}
+
+.login-img{
+    padding-right: 20px;
+}
+
+.cart-img{
+    padding-right: 20px;
+}
+
+.menu-img{
+    padding-right: 20px;
+}
+
+.gallery{
+
+}
+
+.gallery-img{
+    width: 100%;
+}
+
+
+.cy-column1{
+    display:flex;
+    align-items: center;
+    flex-wrap:wrap;
+    text-align:center;
+    margin: 230px;
+}
+
+.item-list{
+    margin-top:100px;
+    margin-left:50px;
+}
+
+.footer-contents{
+    display:flex;
+    float:right;
+    margin-right: 150px;
+}
+
+.footer-below{
+    text-align:center;
+    margin: auto;
+}
+
+footer{
+    border-top: 1px solid black;
+    margin:20px;
+}
+
+.footer-logo{
+    padding-top: 100px;
+}
+
+.company{
+  width: 100%;
+}
+
+.company th, .company td{
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+.company th{
+  font-weight: bold;
+  background-color: #dedede;
+}
+
+.companyinfo{
+  font-size: 25px;
+}
+
+.alert{
+  color: red;
+}

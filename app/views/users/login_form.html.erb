@@ -1,0 +1,33 @@
+<p><% breadcrumb :user_login %><p>
+
+<div class="main users-new">
+  <div class="container">
+    <div class="form-heading"><h4>すでに会員登録をされている方</h4></div>
+    <pre>会員の方は、登録時に入力されたメールアドレスとパスワードでログインしてください。</pre>
+
+    <div class="form users-form">
+      <div class="form-body">
+        <% if @error_message %>
+          <div class="form-error">
+            <%= @error_message %>
+          </div>
+        <% end %>
+      <%= form_tag("/login") do %>
+        <p>メールアドレス</p>
+        <input name="email" value="<%= @email %>">
+        <p>パスワード</p>
+        <input type= "password" name="password_digest" value="<%= @password_digest %>">
+        <br>
+        <br>
+        <input type="submit" value="Log in">
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<h4>新規会員登録する方</h4>
+<pre>初めてご利用の方は、こちらから会員登録をすると、お買い物を楽しむことができます。</pre>
+
+  <%= button_to "新規会員登録", '/signup', method: :get %>

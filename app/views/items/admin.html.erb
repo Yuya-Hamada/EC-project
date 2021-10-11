@@ -1,0 +1,12 @@
+<%= form_with model: @items, url:items_create_path do |form| %>
+  Name
+  <%= form.text_field :name %>
+  Price
+  <%= form.text_field :price %>
+  Image_name
+  <%= form.text_field :image_name %>
+  Explanation
+  <%= form.text_area :explanation %>
+  <%= form.submit %>
+
+<% end %>

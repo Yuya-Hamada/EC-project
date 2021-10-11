@@ -1,0 +1,6 @@
+<% @items.each do |item| %>
+
+<%= link_to(item.image_name, "/admin/#{item.id}") %>
+<%= link_to("edit", "/admin/#{item.id}") %>
+
+<% end %>

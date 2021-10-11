@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FEJ</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/518decf563.js" crossorigin="anonymous"></script>
+
+  </head>
+
+  <body>
+    <header>
+      <div class="header-contents">
+        <div class="header-left">
+          <%= link_to image_tag("/logo.jpg", :size => "65x65"), "/top" %>
+          <div class="logo-sub">French Elixir Japan(フレンチエリキシルジャパン)</div>
+        </div>
+
+        <div class="header-right">
+          <% if session[:user_id] %>
+            <%= link_to("問い合わせ", "/inquiry",{class: "header-inquiry"}) %>
+            <%= link_to image_tag("/user.png", :size => "45x45"), "/signup" %>
+          <%= link_to("ログアウト", "/logout", {method: :post}) %>
+          <%= link_to image_tag("/cart.jpg", :size => "45x45"), "/cart/index" %>
+        <!-- <div class="menu-img"> -->
+          <!-- <%= image_tag "/menu.png", :size => "45x45" %></div> -->
+
+      <% else %>
+        <%= link_to("問い合わせ", "/inquiry",{class: "header-inquiry"}) %>
+        <%= link_to image_tag("/user.png", :size => "45x45"), "/signup" %>
+      <%= link_to image_tag("/login.jpg", :size => "45x45"), "/login" , {class: "login-img"} %>
+      <%= link_to image_tag("/cart.jpg", :size => "45x45") , "/cart/index" %>
+    <!-- <div class="menu-img"><%= image_tag "/menu.png", :size => "45x45" %></div> -->
+  </div>
+    <% end %>
+
+
+</div>
+</header>
+
+<p><%= breadcrumbs  separator: "&rsaquo;"%></p>
+<div class="verify"> <!-- 追記 -->
+　　<%= yield :verify %>
+</div>
+<%= yield %>
+
+<br>
+    <section class="alert">※お酒は20歳から。20歳未満への酒類の販売は禁止しています。
+    </section>
+
+<footer>
+<%= link_to image_tag("/logo.jpg", :size => "65x65"), "/top", {class: "footer-logo"} %>
+
+<div class="footer-contents">
+  <ul>
+    <li><%= link_to("会社概要", "/company") %></li>
+    <li><%= link_to("利用ガイド", "/guide") %></li>
+    <!-- <li>商品紹介</li> -->
+    <!-- <li>ご利用規約</li> -->
+    <li><%= link_to("特定商取引法及び酒税法に基づく表示", "/law") %></li>
+    <li><%= link_to("プライバシーポリシー", "/privacy") %></li>
+    <li><%= link_to("お問い合わせ", "/inquiry") %></li>
+  </ul>
+</div>
+
+<div class="footer-below">
+  <strong>French Elixir Japan(フレンチエリキシルジャパン)</strong>
+  <br>
+    copyright©︎ 2021-French Elixir Japan All right reserved.
+  </br>
+</div>
+
+</footer>
+
+</body>
+</html>

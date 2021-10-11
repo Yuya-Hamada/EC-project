@@ -1,0 +1,15 @@
+<br>
+<br>
+<br>
+<br>
+
+<%= @items.image_name %>
+<%= @items.name %>
+<%= @items.price %>
+<%= @items.explanation %>
+
+<%= link_to("edit", "/items/#{@items.id}/edit")%>
+<%= link_to("delete", "/items/#{@items.id}/destroy", method: :destroy )%>
+
+<br>
+<br>

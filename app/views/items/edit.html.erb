@@ -1,0 +1,8 @@
+<%= form_tag("/items/#{@items.id}/update") do %>
+<input name="name" value="<%= @items.name %>">
+<input name="price" value="<%= @items.price %>">
+<input name="image_name" value= "<%= @items.image_name %>">
+<textarea name="explanation" value="<%= @items.explanation %>"></textarea>
+<input type="submit" value="Edit">
+
+<% end %>

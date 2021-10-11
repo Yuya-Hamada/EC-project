@@ -1,0 +1,156 @@
+<p><% breadcrumb :address %><p>
+
+<h3>お支払い方法の選択</h3>
+
+<div class="td">
+  <!-- <input type="submit" value="選択する"> -->
+  <pre>
+  <div>
+  <input type="checkbox" id="scales" name="scales"
+         checked>
+  <label for="scales">クレジットカード</label>
+  <%= image_tag("/card.png", :size => "288x43") %>
+
+  カード番号  <input name="カード番号">    有効期限<select name="month">
+<option value="">-</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+</select>　月<select name="year">
+<option value="">-</option>
+<option value="2021">2021</option>
+<option value="2022">2022</option>
+<option value="2023">2023</option>
+<option value="2024">2024</option>
+<option value="2025">2025</option>
+<option value="2026">2026</option>
+<option value="2027">2027</option>
+<option value="2028">2028</option>
+<option value="2029">2029</option>
+<option value="2030">2030</option>
+</select>　年
+
+  カードに記載された名前  <input >
+
+<button type="button">追加</button>
+</div>
+
+<div>
+  <input type="checkbox" id="horns" name="horns">
+  <label for="horns">代金引換</label>
+  ※手数料は１決済につき330円（税込）となります。
+</div>
+
+<div>
+  <input type="checkbox" id="horns" name="horns">
+  <label for="horns">コンビニ先払い</label>
+</div>
+
+<div>
+  <input type="checkbox" id="horns" name="horns">
+  <label for="horns">銀行振込</label>
+  ※お振り込み手数料はお客様負担にてお願いいたします。
+</div>
+
+※コンビニ先払いと銀行振込につきましては、商品ご購入後3日以内にお支払いいただけますようお願いいたします。
+支払い期限を過ぎた場合、自動でキャンセルさせていただきますので、予めご了承ください。
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <h4>お届け先の情報をご入力ください。</h4> -->
+<br>
+<br>
+<h3>送付先情報</h3>
+<div class="td">
+<div class="box-container">
+<div class="main users-new">
+  <div class="container">
+    <div class="form-heading"></div>
+    <div class="form users-form">
+      <div class="form-body">
+        <br>
+<pre>  <%= form_tag("/order_details/create") do %><p>氏名</p>
+        <input value="<%= @addresses.address_number %> ">
+        <p>ふりがな</p>
+        <input   value="<%= @addresses.address %>">
+        <p>郵便番号</p>
+        <input  value="<%= @addresses.address_number %> ">
+        <p>住所</p>
+        <input  value="<%= @addresses.address %>">
+        <p>電話番号</p>
+        <input  value="<%= @addresses.address %>">
+
+
+
+
+<br>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<br>
+<h3>配送方法</h3>
+
+<div class="td">
+
+  宅配便
+  <div>
+  <input type="checkbox" id="scales" name="scales"
+         checked>
+  <label for="scales">普通便</label>
+</div>
+
+<div>
+  <input type="checkbox" id="horns" name="horns">
+  <label for="horns">クール便(配送料に加え、クール代 330円(税込）が加算されます)</label>
+</div>
+</div>
+</div>
+
+<br>
+<h3>領収書</h3>
+
+<div class="td">
+
+  <div>
+  <input type="checkbox" id="scales" name="scales"
+         checked>
+  <label for="scales">希望する</label>
+</div>
+
+<div>
+  <input type="checkbox" id="horns" name="horns">
+  <label for="horns">希望しない</label>
+</div>
+</div>
+
+</pre>
+
+<br>
+<input type="submit" value="購入確認画面へ">
+<% end %>
+
+<br>
+<br>

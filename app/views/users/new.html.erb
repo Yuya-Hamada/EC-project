@@ -1,0 +1,52 @@
+
+<p><% breadcrumb :user_new %><p>
+<div class="main users-new">
+  <div class="container">
+    <div class="form-heading"><h1>会員登録</h1></div>
+    <div class="form users-form">
+      <div class="form-body">
+
+<br>
+<div class="td">
+      <%= form_tag("/users/create") do %>
+        <h3>名前</h3>
+        <input name= "name" value="<%= @user.name %> ">
+
+
+        <h3>メールアドレス</h3>
+        <input name= "email" value="<%= @user.email %>">
+
+        <h3>パスワード</h3>
+        <input name= "password_digest" type="password" value="<%= @user.password_digest %>">
+
+        <h3>生年月日</h3>
+        <input name= "birthday" value="">
+
+        <h3>住所</h3>
+        <input  value="">
+
+        <h3>電話番号</h3>
+        <input  value="">
+
+
+
+        <input type="submit" value="登録">
+        <% end %>
+        <br>
+      </div>
+
+
+<br>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<br>
+<h3>すでに会員登録をされている方</h3>
+<pre>すでに会員登録がお済みの方は、こちらからログインができます。</pre>
+
+  <%= button_to "ログイン", '/login', method: :get %>
+<br>
