@@ -7,7 +7,7 @@ class OrderDetailsController < ApplicationController
     @cart.each do|cart|
     @item_ids<<cart.item_id
     @items=Item.where(id: @item_ids)
-  end
+    end
   end
 
   def create
